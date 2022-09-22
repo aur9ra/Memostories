@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memostories</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+</head>
+<body class="bg-gradient-to-r from-sky-400 to-teal-600" onload="main()">
+
+    <div class="mt-6 drop-shadow-header text-center">
+        <p class="text-5xl italic">Memostories</p>
+        <p class="text-2xl">A way to memorize numbers such as <span class="italic font-bold">π</span>, <span class="italic font-bold">e</span>, and other long numbers by <br> creating short stories.</p>
+    </div>
+    
+    <div class="text-center drop-shadow-header mt-4">
+        <p id="currentNums" class="text-white font-bold "></p>
+        
+    </div>
+
+    <div class="mx-auto grid grid-cols-3 w-1/3 mt-1 drop-shadow-header place-items-center justify-center">
+        <button class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('prev')">Previous</button>
+        <p class="text-xs text-white font-light">Page <span id="currentPage"></span>/50</p>
+        <button class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('next')">Next</button>
+    </div>
+
+    <div class="w-10/12 h-3/5" style="margin:auto; margin-top: 15px;">
+        
+        <div class="relative">
+            <p class="absolute font-mono text-2xl" id="underscores" style="pointer-events:none; user-select: none;"></p>
+            <textarea id="input" class="w-full h-full font-mono text-2xl" oninput="updateMain()"></textarea>
+        </div>
+
+    </div>
+    <p class="text-sm mt-6 drop-shadow-header text-center">Created with relatively low effort by Aurora Hart <span class="text-purple-800"><3</span></p>
+    
+</body>
+</html>

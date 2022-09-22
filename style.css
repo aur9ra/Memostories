@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.overlay_input{
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #a9a9a9
+}
+
+.placeholder{
+    color: #A9A9A9
+}
+
+.answer{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
