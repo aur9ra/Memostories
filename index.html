@@ -14,15 +14,20 @@
         <p class="text-2xl">A way to memorize numbers such as <span class="italic font-bold">π</span>, <span class="italic font-bold">e</span>, and other long numbers by <br> creating short stories.</p>
     </div>
     
-    <div class="text-center drop-shadow-header mt-4">
-        <p id="currentNums" class="text-white font-bold "></p>
+    <div id="mainCounter" class="relative my-4 drop-shadow-header" style="height:50px;">
+    <div class="absolute text-center grid grid-cols-2 w-full">
+        <p id="numsPreSpan" class="mr-6 text-white font-bold text-right flex-1"></p>
         
+        <p id="numsPostSpan" class="ml-6 text-white font-bold text-left"></p> 
+    </div>
+
+        <p id="numsSpan" class="text-white font-bold text-5xl text-center text-purple-300"></p> 
     </div>
 
     <div class="mx-auto grid grid-cols-3 w-1/3 mt-1 drop-shadow-header place-items-center justify-center">
-        <button class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('prev')">Previous</button>
-        <p class="text-xs text-white font-light">Page <span id="currentPage"></span>/50</p>
-        <button class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('next')">Next</button>
+        <button id="prevPage" class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('prev')">Previous</button>
+        <p class="text-xs text-white font-light">Page <span id="currentPage"></span>/<span id="pagesCount"></span></p>
+        <button id="nextPage" class="rounded-full" style="background-color: rgba(255,255,255,0.8); height:30px; width:100px;" onclick="scrollPage('next')">Next</button>
     </div>
 
     <div class="w-10/12 h-3/5" style="margin:auto; margin-top: 15px;">
@@ -33,7 +38,7 @@
         </div>
 
     </div>
-    <p class="text-sm mt-6 drop-shadow-header text-center">Created with relatively low effort by Aurora Hart <span class="text-purple-800"><3</span></p>
-    
+    <p class="text-sm mt-6 mb-10 drop-shadow-header text-center">Created as a project by Aurora Hart <span class="text-purple-800">:)</span></p>
+    <p class="opacity-20"></p>
 </body>
 </html>
