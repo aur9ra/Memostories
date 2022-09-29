@@ -6,8 +6,9 @@ var split_memo_unds = [""] // Underscores.
 var split_memo_lens = [] // How long are all of our pages?
 var split_memo_compound_lens = [0] // How big is the sum of all numbers for all pages?
 var split_memo_user_input = [""] // Let's make sure we record our input... somewhere
-var split_memo_user_input_len = [""] //
+var split_memo_user_input_len = [""] // The lengths of all inputs, per page.
 
+var user_input_len_correct = false // If memo = "314", are our inputs of length 3, 1, 4?
 var current_page = 0 // What section are we on?
 var page_len = 0 // How long is this page?
 var page_input_len = 0 // How many characters has the user entered on this page?
@@ -147,17 +148,25 @@ function updateMain(){
         displayNum() // if the amount of spaces changes, display the number
     }
 
+    split_memo_user_input_len = [0]
+    let user_input_len_index = 0
+    let pi_counter = 0
+    for (var i = 0; i < document.getElementById("input").value.length; i++){
+        pi_counter += 1
+        split_memo_user_input_len[user_input_len_index] ++
+        if (pi_counter != memo[user_input_len_index]){
+            user_input_len_correct = false
+            console.log(pi_counter)
+            console.log(memo[user_input_len_index])
+            console.log("----")
+        }
+        if (document.getElementById("input").value == " "){
+            split_memo_user_input_len.push(0)
+            user_input_len_index++
+            pi_counter = 0
+        }
 
-    // if this is true, that means that there was something erased from the input
-    if ( str_curr.length < str_prev.length ){
-        var erased = str_prev.charAt(str_prev.length-1)
-    }
-
-    // if this is true, that means that there was something added to the input
-    else if ( str_curr.length > str_prev.length ){
-        var added = str_curr.charAt(str_curr.length-1)
-
-    
+        console.log(user_input_len_correct)
     }
 
     
